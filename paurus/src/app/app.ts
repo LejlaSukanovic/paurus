@@ -6,7 +6,7 @@ import { StudentsTable } from "./components/students-table/students-table";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, StudentsTable],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
