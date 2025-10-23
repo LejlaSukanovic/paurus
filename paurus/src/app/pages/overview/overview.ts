@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { StudentsTable } from '../../components/students-table/students-table';
+import { Students } from '../../services/students';
+import { Student } from '../../models/student.type';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-overview',
@@ -7,6 +10,20 @@ import { StudentsTable } from '../../components/students-table/students-table';
   templateUrl: './overview.html',
   styleUrl: './overview.css',
 })
-export class Overview {
+export class Overview implements OnInit {
+  studentService = inject(Students)
+  allStudents = signal<Student[]>([]);
 
+  ngOnInit() {
+    this.studentService.getAllStudents()
+    .pipe(
+      catchError((err) => {
+        console.error('Error fetching students', err);
+        return [];
+      })
+    )
+    .subscribe(students => {
+      this.allStudents.set(students);
+    });
+  }
 }

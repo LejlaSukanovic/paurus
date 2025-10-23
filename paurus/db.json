@@ -1,0 +1,139 @@
+{
+  "students": [
+    {
+      "id": "UMFERI1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@example.com",
+      "dateOfBirth": "2001-06-22",
+      "enrollmentDate": "2019-09-01",
+      "major": "Computer Science",
+      "courses": [
+        { "id": "C1", "title": "Mathematics", "credits": 3 },
+        { "id": "C2", "title": "OOP", "credits": 4 }
+      ]
+    },
+    {
+      "id": "UMFERI2",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "janedoe@example.com",
+      "dateOfBirth": "2000-04-14",
+      "enrollmentDate": "2018-09-01",
+      "major": "Biology",
+      "courses": [
+        { "id": "C3", "title": "Biology 101", "credits": 4 },
+        { "id": "C4", "title": "Chemistry", "credits": 3 },
+        { "id": "C12", "title": "Physics", "credits": 3 }
+      ]
+    },
+    {
+      "id": "UMFERI3",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "email": "alice.smith@example.com",
+      "dateOfBirth": "2002-02-10",
+      "enrollmentDate": "2020-09-01",
+      "major": "Mathematics",
+      "courses": [
+        { "id": "C5", "title": "Calculus", "credits": 4 }
+      ]
+    },
+    {
+      "id": "UMFERI4",
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "email": "bob.johnson@example.com",
+      "dateOfBirth": "1999-12-05",
+      "enrollmentDate": "2017-09-01",
+      "major": "Physics",
+      "courses": [
+        { "id": "C6", "title": "Mechanics", "credits": 3 }
+      ]
+    },
+    {
+      "id": "UMFERI5",
+      "firstName": "Carlos",
+      "lastName": "Garcia",
+      "email": "carlos.garcia@example.com",
+      "dateOfBirth": "2001-07-30",
+      "enrollmentDate": "2019-09-01",
+      "major": "Economics",
+      "courses": [
+        { "id": "C7", "title": "Microeconomics", "credits": 3 }
+      ]
+    },
+    {
+      "id": "UMFERI6",
+      "firstName": "Diana",
+      "lastName": "Lee",
+      "email": "diana.lee@example.com",
+      "dateOfBirth": "2003-03-20",
+      "enrollmentDate": "2021-09-01",
+      "major": "Chemistry",
+      "courses": [
+        { "id": "C4", "title": "Chemistry", "credits": 3 }
+      ]
+    },
+    {
+      "id": "UMFERI7",
+      "firstName": "Ethan",
+      "lastName": "Brown",
+      "email": "ethan.brown@example.com",
+      "dateOfBirth": "2000-10-12",
+      "enrollmentDate": "2018-09-01",
+      "major": "Information Systems",
+      "courses": [
+        { "id": "C2", "title": "OOP", "credits": 4 }
+      ]
+    },
+    {
+      "id": "UMFERI8",
+      "firstName": "Fiona",
+      "lastName": "Wong",
+      "email": "fiona.wong@example.com",
+      "dateOfBirth": "2002-05-03",
+      "enrollmentDate": "2020-09-01",
+      "major": "Design",
+      "courses": [
+        { "id": "C8", "title": "Graphic Design", "credits": 3 }
+      ]
+    },
+    {
+      "id": "UMFERI9",
+      "firstName": "George",
+      "lastName": "Miller",
+      "email": "george.miller@example.com",
+      "dateOfBirth": "1998-08-25",
+      "enrollmentDate": "2016-09-01",
+      "major": "History",
+      "courses": [
+        { "id": "C9", "title": "World History", "credits": 3 }
+      ]
+    },
+    {
+      "id": "UMFERI10",
+      "firstName": "Hannah",
+      "lastName": "Davis",
+      "email": "hannah.davis@example.com",
+      "dateOfBirth": "2001-11-08",
+      "enrollmentDate": "2019-09-01",
+      "major": "English",
+      "courses": [
+        { "id": "C10", "title": "Literature", "credits": 3 }
+      ]
+    },
+    {
+      "id": "UMFERI11",
+      "firstName": "Ian",
+      "lastName": "Clark",
+      "email": "ian.clark@example.com",
+      "dateOfBirth": "2000-01-02",
+      "enrollmentDate": "2018-09-01",
+      "major": "Philosophy",
+      "courses": [
+        { "id": "C11", "title": "Logic", "credits": 3 }
+      ]
+    }
+  ]
+}
