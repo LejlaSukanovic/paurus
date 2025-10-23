@@ -1,1 +1,44 @@
-<p>students-table works!</p>
+<p-table [value]="students()" [paginator]="true" [rows]="20" [rowsPerPageOptions]="[10,20,50]"
+    [tableStyle]="{ 'min-width': '60rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+            <th pSortableColumn="firstName">First Name <p-sortIcon field="firstName"></p-sortIcon></th>
+            <th pSortableColumn="lastName">Last Name <p-sortIcon field="lastName"></p-sortIcon></th>
+            <th pSortableColumn="email">Email <p-sortIcon field="email"></p-sortIcon></th>
+            <th pSortableColumn="dateOfBirth">Date of Birth <p-sortIcon field="dateOfBirth"></p-sortIcon></th>
+            <th pSortableColumn="enrollmentDate">Enrollment Date <p-sortIcon field="enrollmentDate"></p-sortIcon></th>
+            <th>Courses</th>
+            <th></th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-student>
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.firstName }}</td>
+            <td>{{ student.lastName }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.dateOfBirth | date: 'mediumDate' }}</td>
+            <td>{{ student.enrollmentDate | date: 'mediumDate' }}</td>
+            <td>
+                @for (course of student.courses.slice(0,2); track course.id) {
+                <p-tag [value]="course.title" severity="info" class="mr-1" style="margin-right: 1px;"></p-tag>
+                }
+                @if (student.courses.length > 2) {
+                <span>+{{ student.courses.length - 2 }} more</span>
+                }
+            </td>
+            <td>
+                
+                <p-button label="Delete" />
+            </td>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="6" class="text-center">No students found.</td>
+        </tr>
+    </ng-template>
+</p-table>
