@@ -11,13 +11,8 @@
       "courses": [
         {
           "id": "C3",
-          "title": "Biology 101",
-          "credits": 4
-        },
-        {
-          "id": "C4",
-          "title": "Chemistry",
-          "credits": 3
+          "title": "Biology 107",
+          "credits": 1
         },
         {
           "id": "C12",

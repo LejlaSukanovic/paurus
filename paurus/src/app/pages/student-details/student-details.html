@@ -7,7 +7,7 @@
             <p><strong>Enrollment Date:</strong> {{ student()?.enrollmentDate | date: 'mediumDate' }}</p>
             <p><strong>Major:</strong> {{ student()?.major }}</p>
         </div>
-        <app-student-edit-form [courses]="student()?.courses ?? []"></app-student-edit-form>
+        <app-student-edit-form [studentId]="student()?.id ?? ''" [courses]="student()?.courses ?? []"></app-student-edit-form>
     </div>
 </p-card>
 }
