@@ -136,7 +136,7 @@ The JSON Server provides the following endpoints:
 ### Student Management
 - Add students with personal information and courses
 - Edit student courses dynamically
-- Delete students with confirmation
+- Delete students
 - View detailed student profiles
 
 ### Search & Filtering
@@ -148,14 +148,6 @@ The JSON Server provides the following endpoints:
 - Dynamic course addition/removal
 - Course validation (title and credits)
 - Visual course tags with credit information
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
 
 ## Troubleshooting
 
@@ -181,10 +173,6 @@ pnpm install
 - Ensure JSON Server is running on port 3000
 - Check that `db.json` exists in the project root
 - Verify API calls in browser developer tools
-
-## License
-
-This project is licensed under the MIT License.
 
 ## Contact
 
