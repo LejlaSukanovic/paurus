@@ -10,5 +10,9 @@ export class Students {
 
   getAllStudents() {
     return this.http.get<Student[]>('http://localhost:3000/students')
-    }
+  }
+
+  addStudent(student: Student) {
+    return this.http.post<Student>('http://localhost:3000/students', student);
+  }
 }
