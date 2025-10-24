@@ -15,6 +15,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { CommonModule } from '@angular/common';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-add-form',
@@ -28,13 +31,17 @@ import { CommonModule } from '@angular/common';
     InputNumberModule,
     CardModule,
     DividerModule,
+    ToastModule
   ],
+  providers: [MessageService],
   templateUrl: './student-add-form.html',
   styleUrl: './student-add-form.css',
 })
 export class StudentAddForm {
   private fb = inject(FormBuilder);
   private studentService = inject(Students);
+  private router = inject(Router);
+  messageService = inject(MessageService);
 
   studentForm: FormGroup = this.fb.group({
     firstName: ['', Validators.required],
@@ -73,11 +80,25 @@ export class StudentAddForm {
     const student: Student = this.studentForm.value;
     this.studentService.addStudent(student).subscribe({
       next: (addedStudent) => {
-        console.log('✅ Student added successfully:', addedStudent);
-        //redirect to overview page
-        window.location.href = '/overview';
+       this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Student added successfully!',
+          life: 3000
+        });
+        // Delay navigation to allow toast to show
+        setTimeout(() => {
+          this.router.navigate(['/overview']);
+        }, 2500);
       },
-      error: (err) => console.error('❌ Error adding student:', err),
+      error: (err) => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to add student. Please try again.',
+          life: 5000
+        });
+      },
     });
   }
 }

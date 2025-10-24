@@ -11,13 +11,8 @@
       "courses": [
         {
           "id": "C3",
-          "title": "Biology 107",
+          "title": "Biology 10",
           "credits": 1
-        },
-        {
-          "id": "C12",
-          "title": "Physics",
-          "credits": 3
         }
       ]
     },
@@ -49,22 +44,6 @@
         {
           "id": "C7",
           "title": "Microeconomics",
-          "credits": 3
-        }
-      ]
-    },
-    {
-      "id": "UMFERI8",
-      "firstName": "Fiona",
-      "lastName": "Wong",
-      "email": "fiona.wong@example.com",
-      "dateOfBirth": "2002-05-03",
-      "enrollmentDate": "2020-09-01",
-      "major": "Design",
-      "courses": [
-        {
-          "id": "C8",
-          "title": "Graphic Design",
           "credits": 3
         }
       ]

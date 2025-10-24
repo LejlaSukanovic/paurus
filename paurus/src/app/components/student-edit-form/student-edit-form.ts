@@ -6,10 +6,13 @@ import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { Students } from '../../services/students';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-student-edit-form',
-  imports: [TagModule, ButtonModule, CommonModule, FormsModule, InputNumberModule],
+  imports: [TagModule, ButtonModule, CommonModule, FormsModule, InputNumberModule, ToastModule],
+  providers: [MessageService],
   templateUrl: './student-edit-form.html',
   styleUrl: './student-edit-form.css',
 })
@@ -18,6 +21,7 @@ export class StudentEditForm {
   courses = input<Course[]>([]);
   isEditing = signal(false);
   studentService = inject(Students);
+  messageService = inject(MessageService);
 
   toggleEdit(isEditing: boolean) {
     this.isEditing.set(isEditing);
@@ -34,11 +38,21 @@ export class StudentEditForm {
   saveCourses() {
     return this.studentService.updateStudentCourses(this.studentId(),this.courses()).subscribe({
       next: () => {
-        console.log('Courses saved:', this.courses());
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Student courses updated successfully!',
+          life: 3000
+        });
         this.toggleEdit(false);
       },
       error: (err) => {
-        console.error('Error saving courses:', err);
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to update student courses. Please try again.',
+          life: 5000
+        });
       },
     });
   }
