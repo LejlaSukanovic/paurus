@@ -6,10 +6,11 @@ import { DatePipe } from '@angular/common';
 import { TooltipModule } from 'primeng/tooltip';
 import { ButtonModule } from 'primeng/button';
 import { Students } from '../../services/students';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-students-table',
-  imports: [TableModule, TagModule, DatePipe, TooltipModule, ButtonModule],
+  imports: [RouterLink, TableModule, TagModule, DatePipe, TooltipModule, ButtonModule],
   templateUrl: './students-table.html',
   styleUrl: './students-table.css',
 })

@@ -1,1 +1,32 @@
-<p>student-edit-form works!</p>
+@if (isEditing() === false) {
+<div class="p-col-12">
+    <h3>Courses</h3>
+    @for (course of courses(); track course.id) {
+    <div class="p-mb-2">
+        <p-tag [value]="course.title" severity="info" class="mr-1"></p-tag>
+        <span>Credits: {{ course.credits }}</span>
+    </div>
+    }
+    <p-button label="Edit Courses" icon="pi pi-pencil" class="p-mt-3" (onClick)="toggleEdit(true)"></p-button>
+</div>
+} @else if (isEditing() === true) {
+<div class="p-col-12">
+    <h3>Edit Courses</h3>
+    <div *ngFor="let course of courses(); let i = index" class="p-mb-3">
+        <div class="p-fluid">
+            <div class="p-field">
+                <label for="courseTitle{{i}}">Course Title</label>
+                <input id="courseTitle{{i}}" pInputText [(ngModel)]="course.title" />
+            </div>
+            <div class="p-field">
+                <label for="courseCredits{{i}}">Credits</label>
+                <p-inputNumber id="courseCredits{{i}}" [(ngModel)]="course.credits" [min]="0" [max]="10"></p-inputNumber>
+            </div>
+        </div>
+        <p-button label="Remove" icon="pi pi-times" class="p-button-danger" (onClick)="removeCourse(i)"></p-button>
+    </div>
+    <p-button label="Add Course" icon="pi pi-plus" class="p-mt-2" (onClick)="addCourse()"></p-button>
+    <p-button label="Save" icon="pi pi-check" class="p-mt-3" (onClick)="saveCourses()"></p-button>
+    <p-button label="Cancel" icon="pi pi-times" class="p-button-secondary p-mt-3" (onClick)="toggleEdit(false)"></p-button>
+</div>
+}

@@ -14,7 +14,7 @@
     </ng-template>
 
     <ng-template pTemplate="body" let-student>
-        <tr id={{student.id}}>
+        <tr id={{student.id}} routerLink="/student/{{student.id}}">
             <td>{{ student.id }}</td>
             <td>{{ student.firstName }}</td>
             <td>{{ student.lastName }}</td>
