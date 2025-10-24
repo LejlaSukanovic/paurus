@@ -16,14 +16,21 @@ export class Overview implements OnInit {
 
   ngOnInit() {
     this.studentService.getAllStudents()
-    .pipe(
-      catchError((err) => {
-        console.error('Error fetching students', err);
-        return [];
-      })
-    )
-    .subscribe(students => {
-      this.allStudents.set(students);
-    });
+      .pipe(
+        catchError((err) => {
+          console.error('Error fetching students', err);
+          return [];
+        })
+      )
+      .subscribe(students => {
+        this.allStudents.set(students);
+      });
   }
+
+  onStudentDeleted(studentId: string) {
+    this.allStudents.update(students =>
+      students.filter(s => s.id !== studentId)
+    );
+  }
+
 }

@@ -1,27 +1,6 @@
 {
   "students": [
     {
-      "id": "UMFERI1",
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "johndoe@example.com",
-      "dateOfBirth": "2001-06-22",
-      "enrollmentDate": "2019-09-01",
-      "major": "Computer Science",
-      "courses": [
-        {
-          "id": "C1",
-          "title": "Mathematics",
-          "credits": 3
-        },
-        {
-          "id": "C2",
-          "title": "OOP",
-          "credits": 4
-        }
-      ]
-    },
-    {
       "id": "UMFERI2",
       "firstName": "Jane",
       "lastName": "Doe",
@@ -44,22 +23,6 @@
           "id": "C12",
           "title": "Physics",
           "credits": 3
-        }
-      ]
-    },
-    {
-      "id": "UMFERI3",
-      "firstName": "Alice",
-      "lastName": "Smith",
-      "email": "alice.smith@example.com",
-      "dateOfBirth": "2002-02-10",
-      "enrollmentDate": "2020-09-01",
-      "major": "Mathematics",
-      "courses": [
-        {
-          "id": "C5",
-          "title": "Calculus",
-          "credits": 4
         }
       ]
     },
@@ -92,38 +55,6 @@
           "id": "C7",
           "title": "Microeconomics",
           "credits": 3
-        }
-      ]
-    },
-    {
-      "id": "UMFERI6",
-      "firstName": "Diana",
-      "lastName": "Lee",
-      "email": "diana.lee@example.com",
-      "dateOfBirth": "2003-03-20",
-      "enrollmentDate": "2021-09-01",
-      "major": "Chemistry",
-      "courses": [
-        {
-          "id": "C4",
-          "title": "Chemistry",
-          "credits": 3
-        }
-      ]
-    },
-    {
-      "id": "UMFERI7",
-      "firstName": "Ethan",
-      "lastName": "Brown",
-      "email": "ethan.brown@example.com",
-      "dateOfBirth": "2000-10-12",
-      "enrollmentDate": "2018-09-01",
-      "major": "Information Systems",
-      "courses": [
-        {
-          "id": "C2",
-          "title": "OOP",
-          "credits": 4
         }
       ]
     },
@@ -188,85 +119,6 @@
           "id": "C11",
           "title": "Logic",
           "credits": 3
-        }
-      ]
-    },
-    {
-      "id": "a7d3",
-      "firstName": "Lejla",
-      "lastName": "Sukanovic",
-      "dateOfBirth": "2002-07-25T22:00:00.000Z",
-      "email": "lejla.sukanovic02@gmail.com",
-      "phone": "0332652",
-      "address": "",
-      "enrollmentDate": "2022-09-12T22:00:00.000Z",
-      "major": "CS",
-      "courses": [
-        {
-          "title": "",
-          "credits": 0
-        },
-        {
-          "title": "",
-          "credits": 0
-        },
-        {
-          "title": "",
-          "credits": 0
-        }
-      ]
-    },
-    {
-      "id": "a106",
-      "firstName": "Lejla",
-      "lastName": "Sukanovic",
-      "dateOfBirth": "2002-07-25T22:00:00.000Z",
-      "email": "lejla.sukanovic02@gmail.com",
-      "phone": "0332652",
-      "address": "",
-      "enrollmentDate": "2022-09-12T22:00:00.000Z",
-      "major": "CS",
-      "courses": [
-        {
-          "title": "",
-          "credits": 0
-        },
-        {
-          "title": "",
-          "credits": 0
-        },
-        {
-          "title": "",
-          "credits": 0
-        }
-      ]
-    },
-    {
-      "id": "a45e",
-      "firstName": "Lejla",
-      "lastName": "Sukanovic",
-      "dateOfBirth": "2025-10-14T22:00:00.000Z",
-      "email": "lejla.sukanovic02@gmail.com",
-      "phone": "0332652",
-      "address": "",
-      "enrollmentDate": "2025-10-13T22:00:00.000Z",
-      "major": "CS",
-      "courses": []
-    },
-    {
-      "id": "c8f7",
-      "firstName": "Lejla",
-      "lastName": "Sukanovic",
-      "dateOfBirth": "2025-10-21T22:00:00.000Z",
-      "email": "lejla.sukanovic02@gmail.com",
-      "phone": "0332652",
-      "address": "",
-      "enrollmentDate": "2025-10-13T22:00:00.000Z",
-      "major": "uztr",
-      "courses": [
-        {
-          "title": "trerre",
-          "credits": 7
         }
       ]
     }

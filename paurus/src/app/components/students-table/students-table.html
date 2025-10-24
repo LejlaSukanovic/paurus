@@ -14,7 +14,7 @@
     </ng-template>
 
     <ng-template pTemplate="body" let-student>
-        <tr>
+        <tr id={{student.id}}>
             <td>{{ student.id }}</td>
             <td>{{ student.firstName }}</td>
             <td>{{ student.lastName }}</td>
@@ -22,16 +22,17 @@
             <td>{{ student.dateOfBirth | date: 'mediumDate' }}</td>
             <td>{{ student.enrollmentDate | date: 'mediumDate' }}</td>
             <td>
-                @for (course of student.courses.slice(0,2); track course.id) {
-                <p-tag [value]="course.title" severity="info" class="mr-1" style="margin-right: 1px;"></p-tag>
+                @for (course of student.courses.slice(0, 2); track course.id) {
+                <ng-container>
+                    <p-tag [value]="course.title" severity="info" class="mr-1" style="margin-right: 1px;"></p-tag>
+                </ng-container>
                 }
                 @if (student.courses.length > 2) {
                 <span>+{{ student.courses.length - 2 }} more</span>
                 }
             </td>
             <td>
-                
-                <p-button label="Delete" />
+                <p-button label="Delete" (onClick)="deleteStudent(student.id)"></p-button>
             </td>
         </tr>
     </ng-template>

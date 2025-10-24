@@ -1,1 +1,4 @@
-<app-students-table [students]="allStudents()" />
+<app-students-table
+  [students]="allStudents()"
+  (deletedStudentId)="onStudentDeleted($event)">
+</app-students-table>

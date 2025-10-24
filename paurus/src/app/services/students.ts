@@ -15,4 +15,8 @@ export class Students {
   addStudent(student: Student) {
     return this.http.post<Student>('http://localhost:3000/students', student);
   }
+
+  deleteStudent(studentId: string) {
+    return this.http.delete(`http://localhost:3000/students/${studentId}`);
+  }
 }
