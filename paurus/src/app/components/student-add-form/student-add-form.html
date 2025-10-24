@@ -1,110 +1,123 @@
-<p-card header="Add Student" class="p-mb-4">
-  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" class="p-fluid">
-    <div class="p-formgrid p-grid">
-      <div class="p-field p-col-12 p-md-6">
-        <label for="firstName">First Name</label>
-        <input pInputText id="firstName" formControlName="firstName" />
-      </div>
+<div class="student-add-container">
+  <p-card class="student-add-card" header="Add Student">
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" class="student-form">
+      <div class="form-section">
+        <h3 class="section-title">Personal Information</h3>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="firstName" class="required">First Name</label>
+            <input pInputText id="firstName" formControlName="firstName" placeholder="Enter first name" />
+          </div>
 
-      <div class="p-field p-col-12 p-md-6">
-        <label for="lastName">Last Name</label>
-        <input pInputText id="lastName" formControlName="lastName" />
-      </div>
+          <div class="form-field">
+            <label for="lastName" class="required">Last Name</label>
+            <input pInputText id="lastName" formControlName="lastName" placeholder="Enter last name" />
+          </div>
 
-      <div class="p-field p-col-12 p-md-6">
-        <label for="email">Email</label>
-        <input pInputText id="email" type="email" formControlName="email" />
-      </div>
+          <div class="form-field">
+            <label for="email" class="required">Email</label>
+            <input pInputText id="email" type="email" formControlName="email" placeholder="Enter email address" />
+          </div>
 
-      <div class="p-field p-col-12 p-md-6">
-        <label for="dateOfBirth">Date of Birth</label>
-        <p-datepicker
-          id="dateOfBirth"
-          formControlName="dateOfBirth"
-          dateFormat="yy-mm-dd"
-        ></p-datepicker>
-      </div>
+          <div class="form-field">
+            <label for="dateOfBirth" class="required">Date of Birth</label>
+            <p-datepicker
+              id="dateOfBirth"
+              formControlName="dateOfBirth"
+              dateFormat="yy-mm-dd"
+              placeholder="Select date of birth"
+            ></p-datepicker>
+          </div>
 
-      <div class="p-field p-col-12 p-md-6">
-        <label for="phone">Phone</label>
-        <input pInputText id="phone" formControlName="phone" />
-      </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input pInputText id="phone" formControlName="phone" placeholder="Enter phone number" />
+          </div>
 
-      <div class="p-field p-col-12 p-md-6">
-        <label for="address">Address</label>
-        <input pInputText id="address" formControlName="address" />
-      </div>
+          <div class="form-field">
+            <label for="address">Address</label>
+            <input pInputText id="address" formControlName="address" placeholder="Enter address" />
+          </div>
 
-      <div class="p-field p-col-12 p-md-6">
-        <label for="enrollmentDate">Enrollment Date</label>
-        <p-datepicker
-          id="enrollmentDate"
-          formControlName="enrollmentDate"
-          dateFormat="yy-mm-dd"
-        ></p-datepicker>
-      </div>
+          <div class="form-field">
+            <label for="enrollmentDate" class="required">Enrollment Date</label>
+            <p-datepicker
+              id="enrollmentDate"
+              formControlName="enrollmentDate"
+              dateFormat="yy-mm-dd"
+              placeholder="Select enrollment date"
+            ></p-datepicker>
+          </div>
 
-      <div class="p-field p-col-12 p-md-6">
-        <label for="major">Major</label>
-        <input pInputText id="major" formControlName="major" />
-      </div>
-    </div>
-
-    <p-divider></p-divider>
-
-    <h3>Courses (optional)</h3>
-    <div formArrayName="courses" class="p-fluid">
-      <div
-        *ngFor="let course of courses.controls; let i = index"
-        [formGroupName]="i"
-        class="p-formgrid p-grid p-ai-center p-mb-2"
-      >
-        <div class="p-col-5">
-          <input
-            pInputText
-            placeholder="Course Title"
-            formControlName="title"
-          />
+          <div class="form-field">
+            <label for="major">Major</label>
+            <input pInputText id="major" formControlName="major" placeholder="Enter major" />
+          </div>
         </div>
-        <div class="p-col-4">
-          <p-inputNumber
-            formControlName="credits"
-            [min]="0"
-            [max]="10"
-            placeholder="Credits"
-          ></p-inputNumber>
-        </div>
-        <div class="p-col-3">
+      </div>
+
+      <p-divider class="form-divider"></p-divider>
+
+      <div class="form-section">
+        <h3 class="section-title">Courses (Optional)</h3>
+        <div class="courses-section" formArrayName="courses">
+          @if (courses.controls.length > 0) {
+            <div *ngFor="let course of courses.controls; let i = index" [formGroupName]="i" class="course-item">
+              <div class="course-form-row">
+                <div class="form-field">
+                  <label for="courseTitle{{i}}">Course Title</label>
+                  <input
+                    pInputText
+                    id="courseTitle{{i}}"
+                    placeholder="Enter course title"
+                    formControlName="title"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="courseCredits{{i}}">Credits</label>
+                  <p-inputNumber
+                    id="courseCredits{{i}}"
+                    formControlName="credits"
+                    [min]="0"
+                    [max]="10"
+                    placeholder="Credits"
+                  ></p-inputNumber>
+                </div>
+                <button
+                  pButton
+                  type="button"
+                  label="Remove"
+                  icon="pi pi-times"
+                  class="remove-course-btn"
+                  (click)="removeCourse(i)"
+                ></button>
+              </div>
+            </div>
+          } @else {
+            <div class="no-courses-message">
+              No courses added yet. Click "Add Course" to get started.
+            </div>
+          }
+
           <button
             pButton
             type="button"
-            label="Remove"
-            icon="pi pi-times"
-            severity="danger"
-            (click)="removeCourse(i)"
+            label="Add Course"
+            icon="pi pi-plus"
+            class="add-course-btn"
+            (click)="addCourse()"
           ></button>
         </div>
       </div>
 
       <button
         pButton
-        type="button"
-        label="Add Course"
-        icon="pi pi-plus"
-        (click)="addCourse()"
-        class="p-mt-2"
+        type="submit"
+        label="Create Student"
+        icon="pi pi-check"
+        class="submit-btn"
+        [disabled]="studentForm.invalid"
       ></button>
-    </div>
-
-    <p-divider></p-divider>
-
-    <button
-      pButton
-      type="submit"
-      label="Submit"
-      icon="pi pi-check"
-      class="p-mt-3"
-      [disabled]="studentForm.invalid"
-    ></button>
-  </form>
-</p-card>
+    </form>
+  </p-card>
+</div>

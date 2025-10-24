@@ -1,17 +1,44 @@
 @if (student() !== null) {
-<p-card header="Student Details" subheader="{{ student()?.firstName ?? '' }} {{ student()?.lastName ?? '' }}">
-    <div class="p-grid">
-        <div class="p-col-12 p-md-6">
-            <p><strong>Email:</strong> {{ student()?.email ?? ''}}</p>
-            <p><strong>Date of Birth:</strong> {{ student()?.dateOfBirth | date: 'mediumDate' }}</p>
-            <p><strong>Enrollment Date:</strong> {{ student()?.enrollmentDate | date: 'mediumDate' }}</p>
-            <p><strong>Major:</strong> {{ student()?.major }}</p>
+<div class="main-student-details-container" >
+<div class="student-details-container">
+    <p-card class="student-card" header="Student Details" subheader="{{ student()?.firstName ?? '' }} {{ student()?.lastName ?? '' }}">
+        <div class="student-info">
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value">{{ student()?.email ?? 'No email provided' }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">{{ student()?.phone ?? 'No phone number provided' }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Address:</span>
+                    <span class="info-value">{{ student()?.address ?? 'No address provided' }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Date of Birth:</span>
+                    <span class="info-value">{{ student()?.dateOfBirth | date: 'mediumDate' }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Enrollment Date:</span>
+                    <span class="info-value">{{ student()?.enrollmentDate | date: 'mediumDate' }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Major:</span>
+                    <span class="info-value">{{ student()?.major ?? 'No major provided' }}</span>
+                </div>
+            </div>
+            <app-student-edit-form [studentId]="student()?.id ?? ''" [courses]="student()?.courses ?? []"></app-student-edit-form>
         </div>
-        <app-student-edit-form [studentId]="student()?.id ?? ''" [courses]="student()?.courses ?? []"></app-student-edit-form>
-    </div>
-</p-card>
+    </p-card>
+</div>
+</div>
 }
 
 @if (!student()) {
-<p>Loading student details...</p>
+<div class="loading-container">
+    <div class="loading-spinner"></div>
+    <span>Loading student details...</span>
+</div>
 }

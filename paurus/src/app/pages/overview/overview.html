@@ -1,4 +1,32 @@
-<app-students-table
-  [students]="allStudents()"
-  (deletedStudentId)="onStudentDeleted($event)">
-</app-students-table>
+<div class="overview-container">
+  <div class="overview-header">
+    <div>
+      <h1 class="page-title">Students Overview</h1>
+      <p class="page-subtitle">Manage and view all student information</p>
+    </div>
+    <a routerLink="/student/add" class="add-student-btn">
+      <i class="pi pi-plus"></i>
+      Add New Student
+    </a>
+  </div>
+
+  <div class="stats-container">
+    <div class="stat-card">
+      <h2 class="stat-number">{{ allStudents().length }}</h2>
+      <p class="stat-label">Total Students</p>
+    </div>
+    <div class="stat-card">
+      <h2 class="stat-number">{{ getTotalCourses() }}</h2>
+      <p class="stat-label">Total Enrollments</p>
+    </div>
+    <div class="stat-card">
+      <h2 class="stat-number">{{ getActiveMajors() }}</h2>
+      <p class="stat-label">Active Majors</p>
+    </div>
+  </div>
+
+  <app-students-table
+    [students]="allStudents()"
+    (deletedStudentId)="onStudentDeleted($event)">
+  </app-students-table>
+</div>

@@ -116,6 +116,355 @@
           "credits": 3
         }
       ]
+    },
+    {
+      "id": "UMFERI12",
+      "firstName": "Kelly",
+      "lastName": "Thompson",
+      "email": "kelly.thompson@example.com",
+      "dateOfBirth": "2001-03-15",
+      "enrollmentDate": "2019-09-01",
+      "major": "Psychology",
+      "courses": [
+        {
+          "id": "C13",
+          "title": "Cognitive Psychology",
+          "credits": 4
+        },
+        {
+          "id": "C14",
+          "title": "Statistics",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI13",
+      "firstName": "Marcus",
+      "lastName": "Rodriguez",
+      "email": "marcus.rodriguez@example.com",
+      "dateOfBirth": "1999-07-22",
+      "enrollmentDate": "2017-09-01",
+      "major": "Engineering",
+      "courses": [
+        {
+          "id": "C15",
+          "title": "Calculus II",
+          "credits": 4
+        },
+        {
+          "id": "C16",
+          "title": "Physics II",
+          "credits": 4
+        }
+      ]
+    },
+    {
+      "id": "UMFERI14",
+      "firstName": "Nina",
+      "lastName": "Patel",
+      "email": "nina.patel@example.com",
+      "dateOfBirth": "2002-09-11",
+      "enrollmentDate": "2020-09-01",
+      "major": "Computer Science",
+      "courses": [
+        {
+          "id": "C17",
+          "title": "Data Structures",
+          "credits": 4
+        }
+      ]
+    },
+    {
+      "id": "UMFERI15",
+      "firstName": "Oliver",
+      "lastName": "Kim",
+      "email": "oliver.kim@example.com",
+      "dateOfBirth": "2000-12-03",
+      "enrollmentDate": "2018-09-01",
+      "major": "Business",
+      "courses": [
+        {
+          "id": "C18",
+          "title": "Marketing",
+          "credits": 3
+        },
+        {
+          "id": "C19",
+          "title": "Finance",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI16",
+      "firstName": "Priya",
+      "lastName": "Sharma",
+      "email": "priya.sharma@example.com",
+      "dateOfBirth": "2001-05-18",
+      "enrollmentDate": "2019-09-01",
+      "major": "Medicine",
+      "courses": [
+        {
+          "id": "C20",
+          "title": "Anatomy",
+          "credits": 5
+        }
+      ]
+    },
+    {
+      "id": "UMFERI17",
+      "firstName": "Quinn",
+      "lastName": "O'Brien",
+      "email": "quinn.obrien@example.com",
+      "dateOfBirth": "1998-11-29",
+      "enrollmentDate": "2016-09-01",
+      "major": "Art",
+      "courses": [
+        {
+          "id": "C21",
+          "title": "Drawing",
+          "credits": 3
+        },
+        {
+          "id": "C22",
+          "title": "Painting",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI18",
+      "firstName": "Rachel",
+      "lastName": "Green",
+      "email": "rachel.green@example.com",
+      "dateOfBirth": "2003-01-14",
+      "enrollmentDate": "2021-09-01",
+      "major": "Environmental Science",
+      "courses": [
+        {
+          "id": "C23",
+          "title": "Ecology",
+          "credits": 4
+        }
+      ]
+    },
+    {
+      "id": "UMFERI19",
+      "firstName": "Samuel",
+      "lastName": "Wright",
+      "email": "samuel.wright@example.com",
+      "dateOfBirth": "2000-08-07",
+      "enrollmentDate": "2018-09-01",
+      "major": "Sociology",
+      "courses": [
+        {
+          "id": "C24",
+          "title": "Social Theory",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI20",
+      "firstName": "Tina",
+      "lastName": "Lopez",
+      "email": "tina.lopez@example.com",
+      "dateOfBirth": "2001-10-25",
+      "enrollmentDate": "2019-09-01",
+      "major": "Music",
+      "courses": [
+        {
+          "id": "C25",
+          "title": "Music Theory",
+          "credits": 3
+        },
+        {
+          "id": "C26",
+          "title": "Piano",
+          "credits": 2
+        }
+      ]
+    },
+    {
+      "id": "UMFERI21",
+      "firstName": "Victor",
+      "lastName": "Chen",
+      "email": "victor.chen@example.com",
+      "dateOfBirth": "1999-04-12",
+      "enrollmentDate": "2017-09-01",
+      "major": "Architecture",
+      "courses": [
+        {
+          "id": "C27",
+          "title": "Design Studio",
+          "credits": 5
+        }
+      ]
+    },
+    {
+      "id": "UMFERI22",
+      "firstName": "Wendy",
+      "lastName": "Taylor",
+      "email": "wendy.taylor@example.com",
+      "dateOfBirth": "2002-06-20",
+      "enrollmentDate": "2020-09-01",
+      "major": "Journalism",
+      "courses": [
+        {
+          "id": "C28",
+          "title": "Media Writing",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI23",
+      "firstName": "Xavier",
+      "lastName": "Johnson",
+      "email": "xavier.johnson@example.com",
+      "dateOfBirth": "2000-02-28",
+      "enrollmentDate": "2018-09-01",
+      "major": "Political Science",
+      "courses": [
+        {
+          "id": "C29",
+          "title": "Government",
+          "credits": 3
+        },
+        {
+          "id": "C30",
+          "title": "International Relations",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI24",
+      "firstName": "Yasmin",
+      "lastName": "Ali",
+      "email": "yasmin.ali@example.com",
+      "dateOfBirth": "2001-11-16",
+      "enrollmentDate": "2019-09-01",
+      "major": "Linguistics",
+      "courses": [
+        {
+          "id": "C31",
+          "title": "Phonetics",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI25",
+      "firstName": "Zachary",
+      "lastName": "Brown",
+      "email": "zachary.brown@example.com",
+      "dateOfBirth": "1998-09-05",
+      "enrollmentDate": "2016-09-01",
+      "major": "Theater",
+      "courses": [
+        {
+          "id": "C32",
+          "title": "Acting",
+          "credits": 3
+        },
+        {
+          "id": "C33",
+          "title": "Stage Design",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI26",
+      "firstName": "Amanda",
+      "lastName": "White",
+      "email": "amanda.white@example.com",
+      "dateOfBirth": "2002-04-09",
+      "enrollmentDate": "2020-09-01",
+      "major": "Anthropology",
+      "courses": [
+        {
+          "id": "C34",
+          "title": "Cultural Anthropology",
+          "credits": 4
+        }
+      ]
+    },
+    {
+      "id": "UMFERI27",
+      "firstName": "Benjamin",
+      "lastName": "Davis",
+      "email": "benjamin.davis@example.com",
+      "dateOfBirth": "2000-07-13",
+      "enrollmentDate": "2018-09-01",
+      "major": "Geography",
+      "courses": [
+        {
+          "id": "C35",
+          "title": "Physical Geography",
+          "credits": 4
+        }
+      ]
+    },
+    {
+      "id": "UMFERI28",
+      "firstName": "Catherine",
+      "lastName": "Wilson",
+      "email": "catherine.wilson@example.com",
+      "dateOfBirth": "2001-12-31",
+      "enrollmentDate": "2019-09-01",
+      "major": "Nutrition",
+      "courses": [
+        {
+          "id": "C36",
+          "title": "Human Nutrition",
+          "credits": 3
+        },
+        {
+          "id": "C37",
+          "title": "Food Science",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI29",
+      "firstName": "Daniel",
+      "lastName": "Martinez",
+      "email": "daniel.martinez@example.com",
+      "dateOfBirth": "1999-03-17",
+      "enrollmentDate": "2017-09-01",
+      "major": "Criminal Justice",
+      "courses": [
+        {
+          "id": "C38",
+          "title": "Criminology",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "id": "UMFERI30",
+      "firstName": "Elena",
+      "lastName": "Garcia",
+      "email": "elena.garcia@example.com",
+      "dateOfBirth": "2003-05-23",
+      "enrollmentDate": "2021-09-01",
+      "major": "Astronomy",
+      "courses": [
+        {
+          "id": "C39",
+          "title": "Stellar Physics",
+          "credits": 4
+        },
+        {
+          "id": "C40",
+          "title": "Observational Astronomy",
+          "credits": 3
+        }
+      ]
     }
   ]
 }

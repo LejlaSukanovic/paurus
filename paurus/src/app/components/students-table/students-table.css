@@ -1,0 +1,302 @@
+/* Students Table Styles */
+.students-table-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.students-table {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+/* Header Styling */
+.students-table .p-datatable-thead > tr > th {
+  background: #64748b;
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 12px 16px;
+  border: none;
+  text-align: left;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+/* Specific column widths */
+.students-table .p-datatable-thead > tr > th:nth-child(1) { /* ID */
+  min-width: 120px;
+}
+
+.students-table .p-datatable-thead > tr > th:nth-child(2) { /* First Name */
+  min-width: 150px;
+}
+
+.students-table .p-datatable-thead > tr > th:nth-child(3) { /* Last Name */
+  min-width: 150px;
+}
+
+.students-table .p-datatable-thead > tr > th:nth-child(4) { /* Email */
+  min-width: 200px;
+}
+
+.students-table .p-datatable-thead > tr > th:nth-child(5) { /* Date of Birth */
+  min-width: 160px;
+}
+
+.students-table .p-datatable-thead > tr > th:nth-child(6) { /* Enrollment Date */
+  min-width: 180px;
+}
+
+.students-table .p-datatable-thead > tr > th:nth-child(7) { /* Major */
+  min-width: 150px;
+}
+
+.students-table .p-datatable-thead > tr > th:nth-child(8) { /* Courses */
+  min-width: 200px;
+}
+
+.students-table .p-datatable-thead > tr > th:nth-child(9) { /* Actions */
+  min-width: 120px;
+}
+
+.students-table .p-datatable-thead > tr > th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.students-table .p-datatable-thead > tr > th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.students-table .p-datatable-thead > tr > th .p-sortable-column-icon {
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 8px;
+}
+
+.students-table .p-datatable-thead > tr > th:hover {
+  background: #52525b;
+}
+
+/* Row Styling */
+.students-table .p-datatable-tbody > tr {
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.students-table .p-datatable-tbody > tr:hover {
+  background: #f8fafc !important;
+}
+
+.students-table .p-datatable-tbody > tr:last-child {
+  border-bottom: none;
+}
+
+/* Cell Styling */
+.students-table .p-datatable-tbody > tr > td {
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  color: #374151;
+  border: none;
+  vertical-align: middle;
+}
+
+.students-table .p-datatable-tbody > tr > td:first-child {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Course Tags Styling */
+.course-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.course-tag {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: none;
+  box-shadow: 0 2px 4px rgba(23, 162, 184, 0.3);
+  transition: all 0.2s ease;
+}
+
+.course-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(23, 162, 184, 0.4);
+}
+
+.more-courses {
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-style: italic;
+  margin-left: 4px;
+}
+
+/* Action Button Styling */
+.delete-btn {
+  border-radius: 6px !important;
+  padding: 0 !important;
+  font-size: 0.875rem !important;
+  color: white !important;
+  transition: all 0.15s ease !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.delete-btn:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.delete-btn:active {
+  background: #b91c1c !important;
+  border-color: #b91c1c !important;
+}
+
+.delete-btn .p-button-icon {
+  margin: 0 !important;
+  color: white !important;
+}
+
+/* Pagination Styling */
+.students-table .p-paginator {
+  background: #f9fafb;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.students-table .p-paginator .p-paginator-pages .p-paginator-page {
+  background: white;
+  border: 1px solid #dee2e6;
+  color: #495057;
+  border-radius: 6px;
+  margin: 0 2px;
+  transition: all 0.2s ease;
+}
+
+.students-table .p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.students-table .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Empty State Styling */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  color: #dee2e6;
+  margin-bottom: 20px;
+}
+
+.empty-state-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #495057;
+}
+
+.empty-state-message {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Loading State */
+.loading-overlay {
+  position: relative;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* Alternating Row Colors */
+.students-table .p-datatable-tbody > tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.students-table .p-datatable-tbody > tr:nth-child(even):hover {
+  background: #f8fafc !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .students-table {
+    font-size: 0.85rem;
+  }
+  
+  .students-table .p-datatable-thead > tr > th,
+  .students-table .p-datatable-tbody > tr > td {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .students-table-container {
+    padding: 12px;
+  }
+  
+  .students-table {
+    border-radius: 8px;
+  }
+  
+  .students-table .p-datatable-thead > tr > th,
+  .students-table .p-datatable-tbody > tr > td {
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+  
+  .course-tags-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .delete-btn {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .students-table .p-datatable-thead > tr > th:nth-child(n+5),
+  .students-table .p-datatable-tbody > tr > td:nth-child(n+5) {
+    display: none;
+  }
+  
+  .students-table .p-datatable-thead > tr > th,
+  .students-table .p-datatable-tbody > tr > td {
+    padding: 8px 4px;
+  }
+}

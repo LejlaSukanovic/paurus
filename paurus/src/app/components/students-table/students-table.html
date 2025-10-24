@@ -1,5 +1,25 @@
-<p-table [value]="students()" [paginator]="true" [rows]="20" [rowsPerPageOptions]="[10,20,50]"
-    [tableStyle]="{ 'min-width': '60rem' }">
+<div class="students-table-container">
+  <p-table #dt
+    [value]="students()" 
+    [paginator]="true" 
+    [rows]="20" 
+    [rowsPerPageOptions]="[10,20,50]"
+    [tableStyle]="{ 'min-width': '120rem', 'width': '100%' }"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="['id', 'firstName', 'lastName', 'email', 'major']"
+    class="students-table"
+    stripedRows>
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <p-iconfield iconPosition="left" class="ml-auto">
+                <p-inputicon>
+                    <i class="pi pi-search"></i>
+                </p-inputicon>
+                <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')" placeholder="Search students..." />
+            </p-iconfield>
+        </div>
+    </ng-template>
     <ng-template pTemplate="header">
         <tr>
             <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
@@ -8,38 +28,69 @@
             <th pSortableColumn="email">Email <p-sortIcon field="email"></p-sortIcon></th>
             <th pSortableColumn="dateOfBirth">Date of Birth <p-sortIcon field="dateOfBirth"></p-sortIcon></th>
             <th pSortableColumn="enrollmentDate">Enrollment Date <p-sortIcon field="enrollmentDate"></p-sortIcon></th>
+            <th pSortableColumn="major">Major <p-sortIcon field="major"></p-sortIcon></th>
             <th>Courses</th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </ng-template>
 
     <ng-template pTemplate="body" let-student>
-        <tr id={{student.id}} routerLink="/student/{{student.id}}">
+        <tr id="student-{{student.id}}" routerLink="/student/{{student.id}}">
             <td>{{ student.id }}</td>
             <td>{{ student.firstName }}</td>
             <td>{{ student.lastName }}</td>
             <td>{{ student.email }}</td>
             <td>{{ student.dateOfBirth | date: 'mediumDate' }}</td>
             <td>{{ student.enrollmentDate | date: 'mediumDate' }}</td>
+            <td>{{ student.major }}</td>
             <td>
-                @for (course of student.courses.slice(0, 2); track course.id) {
-                <ng-container>
-                    <p-tag [value]="course.title" severity="info" class="mr-1" style="margin-right: 1px;"></p-tag>
-                </ng-container>
-                }
-                @if (student.courses.length > 2) {
-                <span>+{{ student.courses.length - 2 }} more</span>
-                }
+                <div class="course-tags-container">
+                    @for (course of student.courses.slice(0, 2); track course.id) {
+                        <p-tag [value]="course.title" class="course-tag"></p-tag>
+                    }
+                    @if (student.courses.length > 2) {
+                        <span class="more-courses">+{{ student.courses.length - 2 }} more</span>
+                    }
+                    @if (student.courses.length === 0) {
+                        <span class="more-courses">No courses</span>
+                    }
+                </div>
             </td>
-            <td>
-                <p-button label="Delete" (onClick)="deleteStudent(student.id)"></p-button>
+            <td (click)="$event.stopPropagation()">
+                <p-button 
+                    class="delete-btn"
+                    size="small"
+                    label="Delete"
+                    (onClick)="$event.stopPropagation(); deleteStudent(student.id);">
+                </p-button>
             </td>
         </tr>
+        
+    <ng-template #paginatorleft>
+        <p-button type="button" icon="pi pi-plus" text />
+    </ng-template>
+
+    <ng-template #paginatorright>
+        <p-button type="button" icon="pi pi-chevron-left" text />
+        <p-button type="button" icon="pi pi-chevron-right" text />
+    </ng-template>
     </ng-template>
 
     <ng-template pTemplate="emptymessage">
         <tr>
-            <td colspan="6" class="text-center">No students found.</td>
+            <td colspan="9">
+                <div class="empty-state">
+                    <div class="empty-state-icon">
+                        <i class="pi pi-users"></i>
+                    </div>
+                    <h3 class="empty-state-title">No Students Found</h3>
+                    <p class="empty-state-message">
+                        There are currently no students in the system.<br>
+                        Start by adding a new student.
+                    </p>
+                </div>
+            </td>
         </tr>
     </ng-template>
-</p-table>
+  </p-table>
+</div>

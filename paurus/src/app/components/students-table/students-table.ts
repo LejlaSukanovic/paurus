@@ -7,10 +7,13 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ButtonModule } from 'primeng/button';
 import { Students } from '../../services/students';
 import { RouterLink } from '@angular/router';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-students-table',
-  imports: [RouterLink, TableModule, TagModule, DatePipe, TooltipModule, ButtonModule],
+  imports: [RouterLink, TableModule, TagModule, DatePipe, TooltipModule, ButtonModule, IconFieldModule, InputIconModule, InputTextModule],
   templateUrl: './students-table.html',
   styleUrl: './students-table.css',
 })

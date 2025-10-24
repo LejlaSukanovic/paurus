@@ -1,32 +1,57 @@
 @if (isEditing() === false) {
-<div class="p-col-12">
-    <h3>Courses</h3>
-    @for (course of courses(); track course.id) {
-    <div class="p-mb-2">
-        <p-tag [value]="course.title" severity="info" class="mr-1"></p-tag>
-        <span>Credits: {{ course.credits }}</span>
+<div class="courses-section">
+    <div class="courses-header">
+        <h3 class="courses-title">Courses</h3>
+        <p-button label="Edit Courses" icon="pi pi-pencil" class="edit-course-btn"
+            (onClick)="toggleEdit(true)"></p-button>
+    </div>
+
+    @if (courses().length > 0) {
+    <div class="course-display">
+        @for (course of courses(); track course.id) {
+        <div class="course-tag-container">
+            <p-tag [value]="course.title" severity="info"></p-tag>
+            <span class="course-credits">{{ course.credits }} credits</span>
+        </div>
+        }
+    </div>
+    } @else {
+    <div class="no-courses-message">
+        No courses assigned to this student yet.
     </div>
     }
-    <p-button label="Edit Courses" icon="pi pi-pencil" class="p-mt-3" (onClick)="toggleEdit(true)"></p-button>
 </div>
 } @else if (isEditing() === true) {
-<div class="p-col-12">
-    <h3>Edit Courses</h3>
-    <div *ngFor="let course of courses(); let i = index" class="p-mb-3">
-        <div class="p-fluid">
-            <div class="p-field">
-                <label for="courseTitle{{i}}">Course Title</label>
-                <input id="courseTitle{{i}}" pInputText [(ngModel)]="course.title" />
-            </div>
-            <div class="p-field">
-                <label for="courseCredits{{i}}">Credits</label>
-                <p-inputNumber id="courseCredits{{i}}" [(ngModel)]="course.credits" [min]="0" [max]="10"></p-inputNumber>
-            </div>
-        </div>
-        <p-button label="Remove" icon="pi pi-times" class="p-button-danger" (onClick)="removeCourse(i)"></p-button>
+<div class="courses-section">
+    <div class="courses-header">
+        <h3 class="courses-title">Edit Courses</h3>
     </div>
-    <p-button label="Add Course" icon="pi pi-plus" class="p-mt-2" (onClick)="addCourse()"></p-button>
-    <p-button label="Save" icon="pi pi-check" class="p-mt-3" (onClick)="saveCourses()"></p-button>
-    <p-button label="Cancel" icon="pi pi-times" class="p-button-secondary p-mt-3" (onClick)="toggleEdit(false)"></p-button>
+
+    @if (courses().length > 0) {
+    <div *ngFor="let course of courses(); let i = index" class="edit-course-form">
+        <div class="course-form-row">
+            <div class="form-field">
+                <label for="courseTitle{{i}}">Course Title</label>
+                <input id="courseTitle{{i}}" type="text" pInputText [(ngModel)]="course.title" placeholder="Enter course title" />
+            </div>
+            <div class="form-field">
+                <label for="courseCredits{{i}}">Credits</label>
+                <p-inputNumber id="courseCredits{{i}}" [(ngModel)]="course.credits" [min]="0" [max]="10"
+                    placeholder="Credits"></p-inputNumber>
+            </div>
+            <p-button label="Remove" icon="pi pi-times" class="remove-course-btn" severity="danger"
+                (onClick)="removeCourse(i)"></p-button>
+        </div>
+    </div>
+    }
+
+    <div class="form-actions">
+        <p-button label="Add Course" icon="pi pi-plus" class="add-course-btn" (onClick)="addCourse()"></p-button>
+    </div>
+
+    <div class="edit-actions">
+        <p-button label="Save Changes" icon="pi pi-check" class="save-btn" (onClick)="saveCourses()"></p-button>
+        <p-button label="Cancel" icon="pi pi-times" class="cancel-btn" (onClick)="toggleEdit(false)"></p-button>
+    </div>
 </div>
 }
